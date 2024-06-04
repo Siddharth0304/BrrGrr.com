@@ -1,0 +1,234 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<style>
+    .inneropt{
+        padding-left: 5%;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        transition: ease-in-out;
+        
+    }
+    .inneropt:hover{
+        background-color: white;
+        border-radius: 20px;
+    }
+</style>
+
+<img src="<%='/images/Tumblr Banner 3000x1055 px.png' %>" class="col-12">
+<br><br>
+<h1><b>Create That One Burger For You</b></h1>
+<br>
+<form class="form" action="/custom" method="post">
+    <div style="background-color:#faf9f6; border-radius: 20px;">
+        <div style="padding: 2%;">
+            <h3>Select Bread</h3>
+            <h6 style="color: grey;">Select any 1 option</h6><br>
+            <div class="inneropt">
+                <label class="form-label col-10" for="roastedgarlic"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Roasted Garlic</label>
+                <input type="radio" class="form-check-input" id="roastedgarlic" name="bread" value="Roasted Garlic">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;79</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="parmesanoregano"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Parmesan Oregano</label>
+                <input type="radio" class="form-check-input" id="parmesanoregano" name="bread" value="Parmesan Oregano">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;89</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="multigrainhoney"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Multigrain Honey Oats</label>
+                <input type="radio" class="form-check-input" id="multigrainhoney" name="bread" value="Multigrain Honey Oats">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;89</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="brioche"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Brioche</label>
+                <input type="radio" class="form-check-input" id="brioche" name="bread" value="Brioche">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;69</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="multigrain"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Multigrain</label>
+                <input type="radio" class="form-check-input" id="multigrain" name="bread" value="Multigrain">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;79</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="whiteitalian"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;White Italian</label>
+                <input type="radio" class="form-check-input" id="whiteitalian" name="bread" value="White Italian"> 
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;69</span>   
+            </div>
+        </div>    
+    </div>
+    <br>
+    <div style="background-color:#faf9f6; border-radius: 20px;">
+        <div style="padding: 2%;">
+            <h3>Select Preparation Style</h3>
+            <h6 style="color: grey;">Select any 1 option</h6><br>
+            <div class="inneropt">
+                <label class="form-label col-10" for="grilchee"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Grilled With Cheese Slice</label>
+                <input type="radio" class="form-check-input" id="grilchee" name="style" value="Grilled With Cheese Slice">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;39</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="nontoasted"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Non-Toasted</label>
+                <input type="radio" class="form-check-input" id="nontoasted" name="style" value="Non-Toasted">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;9</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="toasted"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Toasted</label>
+                <input type="radio" class="form-check-input" id="toasted" name="style" value="Toasted">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;29</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="nongrilchee"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Non-Toasted With Cheese Slice</label>
+                <input type="radio" class="form-check-input" id="nongrilchee" name="style" value="Non-Toasted With Cheese Slice">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;29</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="tbwm"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Toasted Bread With Mozzarella Cheese</label>
+                <input type="radio" class="form-check-input" id="tbwm" name="style" value="Toasted Bread With Mozzarella Cheese">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;49</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="grilled"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Grilled</label>
+                <input type="radio" class="form-check-input" id="grilled" name="style" value="Grilled">    
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;29</span>
+            </div>
+        </div>    
+    </div><br>
+    <div style="background-color:#faf9f6; border-radius: 20px;">
+        <div style="padding: 2%;">
+            <h3>Select Patty</h3>
+            <h6 style="color: grey;">Select any 1 option</h6><br>
+            <div class="inneropt">
+                <label class="form-label col-10" for="friedchicken"><img src="/images/icons8-non-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Fried Chicken</label>
+                <input type="radio" class="form-check-input" id="friedchicken" name="patty" value="Fried Chicken">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;79</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="smashmutton"><img src="/images/icons8-non-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Smash Mutton Patty</label>
+                <input type="radio" class="form-check-input" id="smashmutton" name="patty" value="Smash Mutton Patty">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;89</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="tuna"><img src="/images/icons8-non-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Tuna</label>
+                <input type="radio" class="form-check-input" id="tuna" name="patty" value="Tuna">    
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;99</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="paneer"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Paneer</label>
+                <input type="radio" class="form-check-input" id="paneer" name="patty" value="Paneer">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;79</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="mushroom"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Mushroom</label>
+                <input type="radio" class="form-check-input" id="mushroom" name="patty" value="Mushroom">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;89</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="aloo"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Aloo Tikki</label>
+                <input type="radio" class="form-check-input" id="aloo" name="patty" value="Aloo Tikki">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;69</span>
+            </div>            
+        </div>    
+    </div><br>
+    <div style="background-color:#faf9f6; border-radius: 20px;">
+        <div style="padding: 2%;">
+            <h3>Select Vegetables</h3>
+            <h6 style="color: grey;">Select any 1 to 8 options</h6><br>
+            <div class="inneropt">
+                <label class="form-label col-10" for="lettuce"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Lettuce</label>
+                <input type="checkbox" class="form-check-input" id="lettuce" name="vegetables" value="Lettuce">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;19</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="onions"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Onions</label>
+                <input type="checkbox" class="form-check-input" id="onions" name="vegetables" value="Onions">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;9</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="cucu"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Cucumber</label>
+                <input type="checkbox" class="form-check-input" id="cucu" name="vegetables" value="Cucumber">  
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;9</span>  
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="sp"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Salt & Pepper</label>
+                <input type="checkbox" class="form-check-input" id="sp" name="vegetables" value="Salt & Pepper">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;9</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="cap"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Capsicum</label>
+                <input type="checkbox" class="form-check-input" id="cap" name="vegetables" value="Capsicum">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;9</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="tom"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Tomato</label>
+                <input type="checkbox" class="form-check-input" id="tom" name="vegetables" value="Tomato">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;9</span>
+            </div>            
+            <div class="inneropt">
+                <label class="form-label col-10" for="jal"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Jalapenos</label>
+                <input type="checkbox" class="form-check-input" id="jal" name="vegetables" value="Jalapenos">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;19</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="pik"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Pickle</label>
+                <input type="checkbox" class="form-check-input" id="pik" name="vegetables" value="Pickle">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;19</span>
+            </div>
+        </div>    
+    </div>
+    <div style="background-color:#faf9f6; border-radius: 20px;">
+        <div style="padding: 2%;">
+            <h3>Select Sauces</h3>
+            <h6 style="color: grey;">Select any 1 to 8 option</h6><br>
+            <div class="inneropt">
+                <label class="form-label col-10" for="tm"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Tandoori Mayo</label>
+                <input type="checkbox" class="form-check-input" id="tm" name="sauce" value="Tandoori Mayo">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;39</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="sm"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Sweet Mayo</label>
+                <input type="checkbox" class="form-check-input" id="sm" name="sauce" value="Sweet Mayo">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;29</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="mm"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Mint Mayo</label>
+                <input type="checkbox" class="form-check-input" id="mm" name="sauce" value="Mint Mayo"> 
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;39</span>   
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="bs"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Barbeque Sauce</label>
+                <input type="checkbox" class="form-check-input" id="bs" name="sauce" value="Barbeque Sauce">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;39</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="hm"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Honey Mustard</label>
+                <input type="checkbox" class="form-check-input" id="hm" name="sauce" value="Honey Mustard">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;39</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="rcs"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Red Chilli Sauce</label>
+                <input type="checkbox" class="form-check-input" id="rcs" name="sauce" value="Red Chilli Sauce">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;29</span>
+            </div>            
+            <div class="inneropt">
+                <label class="form-label col-10" for="ran"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Ranch</label>
+                <input type="checkbox" class="form-check-input" id="ran" name="sauce" value="Ranch">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;49</span>
+            </div>
+            <div class="inneropt">
+                <label class="form-label col-10" for="hum"><img src="/images/icons8-veg-48.png" alt="" style="height: 1.5rem;">&nbsp;&nbsp;Hummus</label>
+                <input type="checkbox" class="form-check-input" id="hum" name="sauce" value="Hummus">
+                <span style="font-size: 1rem;" class="col-2">&nbsp;&nbsp;&#8377;49</span>
+            </div>
+        </div>    
+    </div><br>
+    <div style="display: flex;justify-content: center;">
+        <button class="btn" style="background-color: goldenrod;">Submit</button>
+    </div>
+</form>    
+
+
+<script>
+    document.querySelectorAll(".inneropt").forEach((iner)=>{iner.addEventListener("mouseover",(event)=>{
+        event.target.style.cursor="pointer";
+    })});
+    
+</script>

@@ -1,0 +1,63 @@
+<%- layout("./layouts/boilerplate.ejs") %>
+<style>
+    #filters{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .filter{
+        text-align: center;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        opacity: 0.87;
+    }
+    .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+    .filter p{
+        font-size: 0.9rem;
+    }
+    #filters a{
+        text-decoration: none;
+        color: black;
+    }
+</style>
+<div class="title" style="display: flex; justify-content: space-between; align-items: last baseline; flex-wrap: wrap;">
+    <h1 style="color: black;">Sweets</h1>
+    <div id="filters" class="mb-2">
+        <div class="filter">
+            <a href="/burger"><div><i class="fa-solid fa-burger fa-xl" style="color: black;"></i></div>
+            <p>Burgers</p></a>
+        </div> 
+        <div class="filter">
+            <a href="/fries"><div><i class="fa-solid fa-pepper-hot fa-xl" style="color: black;"></i></div>
+            <p>Wings & Fries</p></a>
+        </div>
+        <div class="filter">
+            <a href="/drinks"><div><i class="fa-solid fa-martini-glass-citrus fa-xl" style="color: black;"></i></div>
+            <p>Drinks</p></a>
+        </div> 
+        <div class="filter">
+            <a href="/sweet"><div><i class="fa-solid fa-ice-cream fa-xl" style="color: black;"></i></div>
+            <p>Sweet</p></a>
+        </div>
+    </div>
+</div>
+
+<div class="row row-cols-lg-3 row row-cols-md-2 row row-cols-sm-1 row-cols-xs-1">
+    <%for(burger of onlySweets){%>
+        <a href="/menu/<%=burger._id%>" class="listing-link">
+            <div class="card col listing-card">
+                <img src="<%= burger.image%>" class="card-img-top" alt="listing_img" style="height: 20rem; width: 20rem;">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= burger.name %></b> <br>
+                        &#8377;<%= burger.price.toLocaleString("en-IN") %> <br>
+                    </p>
+                </div>
+            </div>
+        </a>        
+    <%}%>
+</div>

@@ -1,0 +1,38 @@
+<%-layout("/layouts/boilerplate.ejs")%>
+<h1 class="mt-1">Your Cart</h1>
+<%if(order.length==0){%>
+    <br><br><br>
+    <h5 class="text-center">Your Cart is Empty</h5>
+<%}%>
+<%if(order.length!=0){%>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub-Total</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <%for(or of order){%>
+            <tr>
+                <td><%=or.burger.name%></td>
+                <td><%=or.burger.price%></td>
+                <td style="display: flex; flex-wrap: nowrap;">
+                    <a href="/cart/decrease/<%=or.burger._id%>"><i class="fa-solid fa-circle-minus btn"></i></a>
+                    <%=or.quantity%>
+                    <a href="/cart/increase/<%=or.burger._id%>"><i class="fa-solid fa-circle-plus btn"></i></a>
+                </td>
+                <td><%=or.burger.price*or.quantity%></td>
+            </tr>
+        <%}%>
+    </tbody>
+</table>
+<div style="text-align: right;">
+    <h3 class="mt-4">Total:<%=total%></h3>
+</div>
+
+<form action="/place" class="text-center"><button class="btn btn-dark mt-5 mb-3" style="background-color: #BC1823;">Place Order</button></form>
+<%}%>
+

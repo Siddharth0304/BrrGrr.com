@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <title>Document</title>
+    <style>
+        
+        @keyframes mainpic{
+            from{top: -20%;opacity: 0;}
+            to{top: 0;opacity: 1;}
+        }
+        .title.in-view{
+            animation: mainpic 1s ease-in-out;
+        }
+        @keyframes cardanim{
+            0% {scale:0}
+            80% {scale:1.15}
+            100% {scale:1}
+        }
+        .crd1.in-view{
+            animation:cardanim 1s ease-out;
+        }
+        .crd2.in-view{
+            animation: cardanim 1.5s  ease-out;
+
+        }
+        .crd3.in-view{
+            animation: cardanim 2s ease-out;
+            
+        }
+        @media (max-width:440px){            
+            .page-1{
+                display: flex !important;
+                height: 50vh !important;
+                width: 160vw !important;
+                            
+            }
+            .page-1 h1{
+                left: 30%;
+            }
+            .beside-img{
+                top: 15% !important;
+                width: 60% !important;
+                left: 90% !important;
+                font-size: 0.9rem !important;
+            }
+            .page-2{
+                width: 160vw !important;
+            }
+            .page-3{
+                height: 80vh !important;
+                font-size: 0.6rem !important;
+                width: 160vw !important;
+            }
+            .fullm{
+                width: 100% !important;
+            }
+            .page-3-div,.p3-p, .page-3-div a, .page-3-div h5{
+                font-size: 0.9rem !important;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="page-1 row g-0" style="background-color: #BC1823; color: #EFEFEF; font-family: poppins; height: 100vh; width: 100%;">
+        <h1 class="title text-center animate" style=" position:absolute;font-size: 5rem;font-weight: 900;">BrrGrr</h1>
+        <img src="https://i.ibb.co/zbwhZ1h/burgerr.jpg" alt="" class="col-6 mainimg ">
+        <div class="col-6 beside-img" style=" position:absolute; left: 55%; top: 30%; width: 30%; font-weight: 400;">
+            <h2 style="font-family: poppins; font-weight: 800;">All About BrrGrr</h2>
+            <p class="brgr">We have been serving irresistible comfort food since 2021. Our mission is to keep you smiling with every bite. <br><br>Treat yourself to a feel-good meal today!</p>
+        </div>
+    </div>
+    <div class="page-2" style="background-color: #EFEFEF; color: black; font-family: poppins;width: 100%;">
+        <br><br>
+        <h1 class="text-center page2-title" style="font-weight: 800;">What We Offer</h1><br>
+        <h5 class="text-center">Curious? Here are our most popular menu items.</h5>
+        <br>
+        <div class="row row-cols-lg-3 row row-cols-md-3 row row-cols-sm-1 row-cols-xs-1" style="width: 100%;">
+            <a href="/burger" style="text-decoration: none;">
+                <div class="card" style="border: none; border-radius: 0;">
+                    <img src="https://images.pexels.com/photos/5474640/pexels-photo-5474640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top px-3 py-3 animate crd1" alt="burger">
+                    <div class="card-body">
+                        <h5 class="card-text text-center">BURGERS</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/fries" style="text-decoration: none;">
+                <div class="card" style="border: none; border-radius: 0;">
+                    <img src="https://images.pexels.com/photos/6941026/pexels-photo-6941026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top px-3 py-3 animate crd2" alt="wings">
+                    <div class="card-body">
+                        <h5 class="card-text text-center">CHICKEN WINGS</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="drinks" style="text-decoration: none;">
+                <div class="card" style="border: none; border-radius: 0;">
+                    <img src="https://images.pexels.com/photos/9996446/pexels-photo-9996446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top px-3 py-3 animate crd3" alt="drinks">
+                    <div class="card-body">
+                        <h5 class="card-text text-center">REFRESHMENTS</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <br><br>
+        <div class="text-center fullm">
+            <a class="btn text-center btn-dark col-2" style="background-color: #BC1823; border: #BC1823; border-radius: 0 20px 0 20px;" href="http://localhost:3000/menu"><h5><b>VIEW FULL MENU</b></h5></a>
+        </div>   
+        <br><br>     
+    </div>
+    <div class="page-3 row g-0" style="background-color: black; font-family: poppins; height: 100vh; width:100%">
+        <img class="col-7 page3-img" src="https://images.unsplash.com/photo-1590004987778-bece5c9adab6?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" style="height: 100%;">
+        <div class="col-5 ">
+            <br><br><br>
+            <div class="page-3-div" style="width: 15rem; color: #EFEFEF; position: relative;left: 13%;">
+                <b>OPENING HOURS</b>
+                <p style="font-size: 1rem;" class="p3-p">Mon - Fri: 7am - 10pm <br>Saturday: 8am - 10pm <br> Sunday: 8am - 11pm</p><br>
+                <b>LOCATION</b>
+                <p style="font-size: 1rem;" class="p3-p">Next Galleria Mall, Musarambagh, Hyderabad.</p><br>
+                <b>FOLLOW US ON</b><br>
+                <a href="" style="text-decoration: none;color: #EFEFEF;font-size: 1rem;">Instagram</a><br>
+                <a href="" style="text-decoration: none;color: #EFEFEF;font-size: 1rem;">Facebook</a><br>
+                <a href="" style="text-decoration: none;color: #EFEFEF;font-size: 1rem;">Twitter</a>
+                <br><br><br>
+                <h5><b>contact@brrgrr.com</b></h5>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+        const observer=new IntersectionObserver(entries=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add("in-view");
+                    return;
+                }
+            });
+        });
+        const allAnimatedElements1=document.querySelectorAll(".animate");
+        allAnimatedElements1.forEach((element)=>observer.observe(element));
+        });
+    </script>
+</body>
+</html>

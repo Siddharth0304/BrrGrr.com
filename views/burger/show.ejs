@@ -1,0 +1,113 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<style>
+    .show-img {
+      width: 100%;
+      height: auto;
+    }
+  
+    @media (max-width: 768px) {
+      .show-img {
+        height: 200px; /* Adjust height as needed for small screens */
+        object-fit: cover;
+      }
+    }
+  </style>
+  
+<div class="row">
+    <% if (category === "burger" || category === "fries") { %>
+        <div class="col-10 offset-1 col-md-8 offset-md-3 mt-3 show-hd">
+            <h2><b><%= burger.name %></b></h2>
+        </div>
+        <div class="card col-10 offset-1 col-md-6 offset-md-3 show-card listing-card mt-3">
+            <img src="<%= burger.image %>" class="card-img-top show-img" alt="listingimage">
+            <div class="card-body mt-3">
+                <i><%= burger.description %></i><br>
+                Spice: <%= burger.spice %> <br>
+                Ingredients:
+                <% for (ing of ingredients) { %>
+                    <span><%= ing %>&nbsp;</span>
+                <% } %>
+                <br>
+                <span style="font-size: 1.15rem;">Price: &#8377;<%= burger.price.toLocaleString("en-in") %></span><br><br>
+                <form action="/add-to-cart/<%= burger._id %>" method="get">
+                    <button class="btn btn-warning adc">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+    <% if (category === "drinks" || category === "sweet") { %>
+        <div class="col-10 offset-1 col-md-8 offset-md-3 mt-3 show-hd">
+            <h2><%= burger.name %></h2>
+        </div>
+        <div class="card col-10 offset-1 col-md-6 offset-md-3 show-card listing-card mt-3">
+            <img src="<%= burger.image %>" class="card-img-top show-img" alt="listingimage">
+            <div class="card-body mt-3">
+                <i><%= burger.description %></i><br>
+                Ingredients:
+                <% for (ing of ingredients) { %>
+                    <span><%= ing %>&nbsp;</span>
+                <% } %>
+                <br>
+                <span style="font-size: 1.15rem;">Price: &#8377;<%= burger.price.toLocaleString("en-in") %></span><br><br>
+                <form action="/add-to-cart/<%= burger._id %>" method="get">
+                    <button class="btn btn-warning adc">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+</div>
+<div class="col-10 offset-1 col-md-6 offset-md-3 mt-3 show-hd">
+    <% if (curruser) { %>
+        <hr>
+        <h3>Leave a Review</h3>
+        <form action="/burgers/<%= burger._id %>/reviews" method="POST" novalidate class="needs-validation">
+            <div class="mb-3 mt-3">
+                <label for="rating" class="form-label">Rating</label>
+                <fieldset class="starability-slot">
+                    <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                    <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                    <label for="first-rate1" title="Terrible">1 star</label>
+                    <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                    <label for="first-rate2" title="Not good">2 stars</label>
+                    <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                    <label for="first-rate3" title="Average">3 stars</label>
+                    <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                    <label for="first-rate4" title="Very good">4 stars</label>
+                    <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                    <label for="first-rate5" title="Amazing">5 stars</label>
+                </fieldset>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="comment" class="form-label">Comments</label>
+                <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
+                <div class="invalid-feedback">
+                    Please Write Comments.
+                </div>
+            </div>
+            <button class="btn btn-dark">Submit</button>
+        </form>
+    <% } %>
+
+    <div>
+        <% if (burger.reviews.length > 0) { %>
+            <hr>
+            <div class="row">
+                <h3>All Reviews</h3><br><br>
+                <% for (review of burger.reviews) { %>
+                    <div class="card col-10 col-md-6 ms-3 mb-3 shadow">
+                        <div class="card-body mb-2">
+                            <h5 class="card-title mt-2"><%= review.author.username %></h5>
+                            <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                            <p class="card-text"><%= review.comment %></p>
+                        </div>
+                        <% if (curruser && review.author._id.equals(curruser._id)) { %>
+                            <form class="mb-3" action="/burgers/<%= burger._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST" style="display: flex; justify-content: center;">
+                                <button class="btn btn-sm btn-outline-dark" style="font-weight: 500;">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+        <% } %>
+    </div>
+</div>

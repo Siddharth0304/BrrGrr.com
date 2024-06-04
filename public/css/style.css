@@ -1,0 +1,149 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+.container{
+    flex: 1;
+}
+/* Navbar */
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+
+.fa-compass{
+    color: #FF385C;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: black !important;
+}
+
+/* Footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #222;
+}
+
+.f-info-links a:hover{
+    text-decoration: #222 solid underline;
+}
+
+.f-info-links,.f-info-socials,f-info-brand{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials i{
+    margin-right: 1rem;
+}
+
+.f-info{
+    background-color: #ebebeb;
+    height: 8rem;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link:hover{
+    box-shadow: 10px black !important;
+}
+
+/* Cards */
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0;
+}
+
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay{
+    opacity: 0;
+    transition: 50ms ease-in;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* New Page */
+.add-btn{
+    background-color: #FF385C !important;
+    border: none;
+}
+
+/* Edit Page */
+.edit-btn{
+    background-color: #FF385C !important;
+    border: none;
+}
+
+/* Show Page */
+.show-img{
+    height: 70vh;
+}
+
+.btns{
+    padding: 0;
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.show-hd{
+    padding: 0;
+}
+.btn{
+    border: none;
+}
+
+@media (max-width:770px){
+    .navbar-collapse{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        animation: art ease-in-out 1s;
+    }
+
+}
+
+.sehwag{
+    margin-top: 100px;
+}
+
+
+
+
+
